@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <script type="module" src="./largeSquareBlock.js"></script>
+    <script type="module" src="./smallSquareBlock.js"></script>
+    <script type="module" src="./verticalRectBlock.js"></script>
+    <script type="module" src="./horizontalRectBlock.js"></script>
+    <script type="module" src="./main.js"></script>
+    <title>Block Puzzle</title>
+  </head>
+  <body>
+    <div class="instruction">
+      <img
+        class="instruction-texture"
+        src="./assets/pattern/textureLarge.png"
+      />
+      <p class="instruction-eng">
+        Slide the blocks to solve the puzzle so that the largest square is right
+        in the bottom center.
+      </p>
+      <p class="instruction-kor">
+        블럭을 밀어 가장 큰 정사각형이 맨 아래 정중앙에 오도록 퍼즐을 풀어
+        보세요.
+      </p>
+    </div>
+    <div class="credit">
+      <img class="credit-texture" src="./assets/pattern/textureLarge.png" />
+      <p>
+        Developed by ChaewonYu 2024<br /><br /><br /><br /><br /><br /><br /><br /><br />Inspired
+        by MOI:<br />Museum <br />of Illusions
+      </p>
+      <img class="credit-pic" src="./assets/moi.png" />
+    </div>
+    <div class="board-container">
+      <img class="board-texture" src="./assets/pattern/textureSmall.png" />
+      <table class="board-table">
+        <tbody class="board"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
