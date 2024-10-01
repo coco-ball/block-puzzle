@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
 //   });
 // });
 
-function getOpacity() {
-  return window.getComputedStyle(instructionControl).opacity;
+function getOpacity(el) {
+  return window.getComputedStyle(el).opacity;
 }
 
 function handleBoardContainerClick() {
@@ -43,26 +43,39 @@ function handleBoardContainerClick() {
   }
 }
 
-if (elements[0] !== boardContainer) {
-  boardContainer.addEventListener("click", handleBoardContainerClick);
-}
-
 instruction.addEventListener("click", function () {
-  if (getOpacity() === "0") {
+  if (getOpacity(instructionControl) === "0") {
     instructionControl.classList.add("fadein");
   } else {
     if (elements[0] === instruction) {
       bringToFront(boardContainer);
     } else {
       bringToFront(instruction);
+      boardContainer.addEventListener("click", handleBoardContainerClick);
     }
   }
 });
 credit.addEventListener("click", function () {
   bringToFront(credit);
+  boardContainer.addEventListener("click", handleBoardContainerClick);
 });
 
 function bringToFront(clickedElement) {
+  console.log(elements);
+  const newElements = [];
+  const tempElements = [];
+  for (let i = 0; i < 3; i++) {
+    let element = elements[i];
+    if (element === clickedElement) {
+      newElements[0] = element;
+    } else {
+      tempElements.push(element);
+    }
+  }
+  newElements.push(...tempElements);
+  elements = newElements; // elements 배열을 다시 정렬하여 최신화
+  console.log(elements);
+
   // 클릭된 요소가 가장 높은 z-index를 가짐
   clickedElement.style.zIndex = 3;
   clickedElement.classList.add("show");
@@ -76,8 +89,6 @@ function bringToFront(clickedElement) {
       el.style.zIndex = 2 - index; // 2, 1 순서로 z-index 설정
       el.classList.remove("show");
     });
-
-  console.log(sortedElements);
 
   // 애니메이션이 끝난 후 'show' 클래스를 제거 (1.5초 후)
   setTimeout(() => {
