@@ -6,6 +6,7 @@ puzzle.init();
 const credit = document.querySelector(".credit");
 const instruction = document.querySelector(".instruction");
 const boardContainer = document.querySelector(".board-container");
+const instructionControl = document.querySelector(".instruction-control");
 
 let elements = [credit, instruction, boardContainer];
 
@@ -30,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
 //   });
 // });
 
+function getOpacity() {
+  return window.getComputedStyle(instructionControl).opacity;
+}
+
 function handleBoardContainerClick() {
   if (elements[0] === boardContainer) {
     boardContainer.removeEventListener("click", handleBoardContainerClick);
@@ -43,10 +48,14 @@ if (elements[0] !== boardContainer) {
 }
 
 instruction.addEventListener("click", function () {
-  if (elements[0] === instruction) {
-    bringToFront(boardContainer);
+  if (getOpacity() === "0") {
+    instructionControl.classList.add("fadein");
   } else {
-    bringToFront(instruction);
+    if (elements[0] === instruction) {
+      bringToFront(boardContainer);
+    } else {
+      bringToFront(instruction);
+    }
   }
 });
 credit.addEventListener("click", function () {
@@ -77,34 +86,3 @@ function bringToFront(clickedElement) {
     console.log(elements);
   }, 1500);
 }
-
-function animateExample() {
-  const exampleBlock = document.querySelectorAll(".instruction-example-block");
-  const exampleBlank = document.querySelector(".instruction-example-blank");
-
-  // 1초 후 첫 번째와 두 번째 instruction-example-block의 opacity를 50%로 변경
-  setTimeout(() => {
-    exampleBlock.forEach((block) => {
-      block.style.opacity = 0.5;
-    });
-  }, 1000);
-
-  // 2초 후 instruction-example-blank의 opacity를 50%로 변경
-  setTimeout(() => {
-    exampleBlank.style.opacity = 0.5;
-  }, 2000);
-
-  // 3초 후 모든 블록의 opacity를 100%로 변경하고, blankBlock을 맨 앞으로 이동
-  setTimeout(() => {
-    exampleBlock.forEach((block) => {
-      block.style.opacity = 1;
-    });
-    exampleBlank.style.opacity = 1;
-
-    // blankBlock을 맨 앞으로 이동 (순서를 가장 앞쪽으로)
-    exampleBlank.style.order = -1;
-  }, 3000);
-}
-
-// 페이지가 로드된 후 애니메이션을 시작
-document.addEventListener("DOMContentLoaded", animateExample);
