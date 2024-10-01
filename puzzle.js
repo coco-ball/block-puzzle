@@ -1,8 +1,8 @@
 import blocks from "./block.js";
-import VerticalRectBlock from "./verticalRectBlock.js";
-import HorizontalRectBlock from "./horizontalRectBlock.js";
-import SmallSquareBlock from "./smallSquareBlock.js";
-import LargeSquareBlock from "./largeSquareBlock.js";
+import VerticalRectBlock from "./classes/verticalRectBlock.js";
+import HorizontalRectBlock from "./classes/horizontalRectBlock.js";
+import SmallSquareBlock from "./classes/smallSquareBlock.js";
+import LargeSquareBlock from "./classes/largeSquareBlock.js";
 
 export default class Puzzle {
   constructor() {
