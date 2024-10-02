@@ -289,12 +289,10 @@ body {
     width: 40%;
     display: flex;
     justify-content: space-between;
-    padding: 0;
   }
 
   .credit-pic {
     height: 24vh;
-    /* width: 50%; */
     width: 33%;
     min-width: 3.5rem;
     object-fit: cover;
@@ -307,7 +305,6 @@ body {
   .credit-text {
     flex-direction: row;
     gap: 0;
-    padding: 8px 0 8px 8px;
     width: 66%;
   }
 
