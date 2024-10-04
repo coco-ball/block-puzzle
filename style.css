@@ -22,7 +22,6 @@ body {
   transform: rotate(-5deg);
   z-index: 3;
   padding: 12px;
-  font-size: 4.5vw;
   will-change: filter;
   filter: drop-shadow(0 0 0.3rem rgba(0, 0, 0, 0.3));
   display: flex;
@@ -48,12 +47,17 @@ body {
 }
 
 .instruction-eng {
-  padding-right: 33px;
+  font-size: 4.5vw;
+  padding-right: 30px;
 }
 
 .instruction-kor {
   line-height: 1.25;
-  font-size: 4.3vw;
+  font-size: 4.27vw;
+}
+
+.hide {
+  display: block;
 }
 
 .instruction-control {
@@ -91,13 +95,13 @@ body {
 }
 
 .fadeout {
-  opacity: 0;
   display: none;
+  opacity: 0;
 }
 
+.instruction-click-gif,
 .instruction-control-gif {
   width: 100%;
-  /* display: none; */
 }
 
 .copyright {
@@ -240,6 +244,33 @@ body {
   background-image: url("./assets/pattern/vl.png");
 }
 
+@media screen and (min-width: 30rem) {
+  .hide {
+    display: none;
+  }
+
+  .instruction-control {
+    /* height: 28.5rem; */
+    font-size: 0.77rem;
+    text-align: start;
+    align-items: start;
+    margin-left: auto;
+  }
+
+  .instruction-control-kor {
+    font-size: 0.72rem;
+  }
+
+  .instruction-control-gif,
+  .instruction-click-gif {
+    max-width: 20.31rem;
+  }
+
+  .instruction-control > p {
+    max-width: 20.31rem;
+  }
+}
+
 @media screen and (min-width: 40rem) {
   .board > tr > td {
     width: 110px;
@@ -248,26 +279,39 @@ body {
 
   .instruction {
     z-index: 3;
-    font-size: 3.7vw;
+  }
+
+  .instruction-eng {
+    font-size: 3.5vw;
   }
 
   .instruction-kor {
     font-size: 3.45vw;
   }
 
-  .instruction-control {
-    /* font-size: 0.8rem; */
-    font-size: 1.8vw;
+  .instruction-control-gif,
+  .instruction-click-gif {
+    max-width: 20.31rem;
   }
 
-  /* .instruction-control > p > br {
-    display: inline-block;
-    content: " ";
-  } */
+  .instruction-control > p {
+    max-width: 20.31rem;
+  }
+
+  .instruction-control {
+    font-size: 0.85rem;
+    /* font-size: 1.8vw; */
+    /* height: fit-content; */
+  }
 
   .instruction-control-kor {
-    /* font-size: 0.6rem; */
-    font-size: 1.6vw;
+    font-size: 0.8rem;
+    /* font-size: 1.6vw; */
+  }
+
+  .instruction-control > p > br {
+    display: inline-block;
+    content: " ";
   }
 
   .credit {
@@ -284,25 +328,31 @@ body {
   }
 
   .instruction {
+    /* flex-direction: column;
+    flex-wrap: wrap; */
+  }
+
+  .instruction > p > br {
+    display: inline-block;
+    content: " ";
+  }
+
+  .instruction-eng {
     font-size: 3vw;
   }
 
   .instruction-kor {
-    font-size: 2.7vw;
+    font-size: 2.8vw;
   }
 
   .instruction-control {
-    width: 100%;
     font-size: 1rem;
     align-items: end;
+    order: 1;
   }
 
   .instruction-control-kor {
     font-size: 0.85rem;
-  }
-
-  .instruction-control-gif {
-    width: 23.8rem;
   }
 
   .credit {

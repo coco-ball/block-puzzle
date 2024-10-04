@@ -68,7 +68,11 @@ instruction.addEventListener("click", function () {
     removeFadein();
     //순서대로 fadein 추가
     if (instructionNum !== 0 && targetDiv !== null) {
+      // document.querySelector(".instruction-eng").classList.add("eng-smaller");
+      document.querySelector(".instruction-kor").classList.add("hide");
       targetDiv.classList.add("fadein");
+    } else {
+      document.querySelector(".instruction-kor").classList.remove("hide");
     }
 
     if (instructionNum === 4) {
