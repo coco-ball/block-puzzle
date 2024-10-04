@@ -247,11 +247,11 @@ body {
   background-image: url("./assets/pattern/vl.png");
 }
 
-@media screen and (max-height: 42rem) {
-  .board > tr > td {
-    width: 74px;
-    height: 74px;
-  }
+@media screen and (max-height: 48rem) {
+  /* .board > tr > td {
+    width: 79px;
+    height: 79px;
+  } */
 
   .instruction {
     height: 85vh;
