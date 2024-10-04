@@ -47,13 +47,13 @@ body {
 }
 
 .instruction-eng {
-  font-size: 4.5vw;
+  font-size: 4.6vw;
   padding-right: 30px;
 }
 
 .instruction-kor {
   line-height: 1.25;
-  font-size: 4.27vw;
+  font-size: 4.28vw;
 }
 
 .hide {
@@ -68,8 +68,9 @@ body {
   flex-direction: column;
   gap: 0.8vh;
   align-items: end;
-  font-size: 2.4vw;
   text-align: end;
+  /* font-size: 2.4vw; */
+  font-size: 0.66rem;
   transition: opacity 700ms ease-in-out;
 }
 
@@ -86,7 +87,9 @@ body {
 
 .instruction-control-kor {
   line-height: 1.28;
-  font-size: 2.15vw;
+  /* font-size: 2.15vw; */
+  font-size: 0.59rem;
+  letter-spacing: -0.003rem;
 }
 
 .fadein {
@@ -244,6 +247,17 @@ body {
   background-image: url("./assets/pattern/vl.png");
 }
 
+@media screen and (max-height: 42rem) {
+  .board > tr > td {
+    width: 74px;
+    height: 74px;
+  }
+
+  .credit {
+    top: 17.2%;
+  }
+}
+
 @media screen and (min-width: 30rem) {
   .hide {
     display: none;
@@ -268,6 +282,11 @@ body {
 
   .instruction-control > p {
     max-width: 20.31rem;
+  }
+
+  .instruction-control > p > br {
+    display: inline-block;
+    content: " ";
   }
 }
 
@@ -309,11 +328,6 @@ body {
     /* font-size: 1.6vw; */
   }
 
-  .instruction-control > p > br {
-    display: inline-block;
-    content: " ";
-  }
-
   .credit {
     font-size: 2.2vw;
     top: 22.2%;
@@ -346,13 +360,13 @@ body {
   }
 
   .instruction-control {
-    font-size: 1rem;
+    font-size: 0.95rem;
     align-items: end;
     order: 1;
   }
 
   .instruction-control-kor {
-    font-size: 0.85rem;
+    font-size: 0.84rem;
   }
 
   .credit {
