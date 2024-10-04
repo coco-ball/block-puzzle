@@ -46,23 +46,33 @@ body {
   pointer-events: none;
 }
 
+.instruction > p {
+  animation: pFadeIn 300ms;
+}
+
 .instruction-eng {
   font-size: 4.6vw;
   padding-right: 30px;
+  order: 0;
 }
 
 .instruction-kor {
+  height: fit-content;
+  opacity: 1;
   line-height: 1.25;
   font-size: 4.28vw;
+  /* transition: height 0ms ease-in-out 300ms; */
+  /* transition: opacity 700ms ease-in-out; */
 }
 
 .hide {
-  display: block;
+  height: 0;
+  opacity: 0;
 }
 
 .instruction-control {
   display: flex;
-  display: none;
+  height: 0;
   z-index: -1;
   opacity: 0;
   flex-direction: column;
@@ -71,19 +81,10 @@ body {
   text-align: end;
   /* font-size: 2.4vw; */
   font-size: 0.64rem;
-  transition: opacity 700ms ease-in-out;
+  transition: height 0ms ease-in-out 300ms;
+  transition: opacity 300ms ease-in-out;
+  transition: order 0ms ease 0ms;
 }
-
-/* .instruction-goal {
-  z-index: -1;
-  opacity: 0;
-  flex-direction: column;
-  gap: 0.8vh;
-  font-size: 2.4vw;
-  align-items: end;
-  text-align: end;
-  transition: opacity 700ms ease-in-out 100ms;
-} */
 
 .instruction-control-kor {
   line-height: 1.28;
@@ -93,8 +94,11 @@ body {
 }
 
 .fadein {
-  display: flex;
+  height: auto;
   opacity: 1;
+  order: 1;
+  transition: height 0ms ease-in-out;
+  transition: opacity 300ms ease-in-out 150ms;
 }
 
 .fadeout {
@@ -379,11 +383,11 @@ body {
   .instruction-control {
     font-size: 0.95rem;
     align-items: end;
-    order: 1;
   }
 
   .instruction-control-kor {
     font-size: 0.84rem;
+    order: 2;
   }
 
   .credit {

@@ -71,7 +71,14 @@ instruction.addEventListener("click", function () {
       // document.querySelector(".instruction-eng").classList.add("eng-smaller");
       document.querySelector(".instruction-kor").classList.add("hide");
       targetDiv.classList.add("fadein");
+      document.querySelector(".instruction-eng").innerHTML =
+        "#" + (instructionNum % 4);
+      document.querySelector(".instruction-kor").innerHTML = "";
     } else {
+      document.querySelector(".instruction-eng").innerHTML =
+        "  Slide the blocks to solve the puzzle: place the largest square right at the bottom center.";
+      document.querySelector(".instruction-kor").innerHTML =
+        "블럭을 밀어 가장 큰 정사각형이 <br />맨 아래 정중앙에 오도록 퍼즐을 풀어 보세요.";
       document.querySelector(".instruction-kor").classList.remove("hide");
     }
 
