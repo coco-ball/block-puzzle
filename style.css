@@ -264,6 +264,15 @@ body {
   .board-container {
     padding: 10px;
   }
+
+  @keyframes shift {
+    50% {
+      translate: 0 -800px;
+    }
+    100% {
+      translate: 0;
+    }
+  }
 }
 
 @media screen and (min-width: 30rem) {
