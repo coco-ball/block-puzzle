@@ -99,7 +99,7 @@ credit.addEventListener("click", function () {
 });
 
 function bringToFront(clickedElement) {
-  console.log(elements);
+  // console.log(elements);
   const newElements = [];
   const tempElements = [];
   for (let i = 0; i < 3; i++) {
@@ -112,7 +112,7 @@ function bringToFront(clickedElement) {
   }
   newElements.push(...tempElements);
   elements = newElements; // elements 배열을 다시 정렬하여 최신화
-  console.log(elements);
+  // console.log(elements);
 
   // 클릭된 요소가 가장 높은 z-index를 가짐
   clickedElement.style.zIndex = 3;
@@ -132,6 +132,6 @@ function bringToFront(clickedElement) {
   setTimeout(() => {
     clickedElement.classList.remove("show");
     elements = sortElementsByZIndex(); // elements 배열을 다시 정렬하여 최신화
-    console.log(elements);
+    // console.log(elements);
   }, 1500);
 }
