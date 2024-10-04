@@ -251,7 +251,7 @@ body {
   background-image: url("./assets/pattern/vl.png");
 }
 
-@media screen and (max-height: 48rem) {
+@media screen and (max-height: 46rem) {
   /* .board > tr > td {
     width: 79px;
     height: 79px;
