@@ -253,8 +253,16 @@ body {
     height: 74px;
   }
 
+  .instruction {
+    height: 85vh;
+  }
+
   .credit {
-    top: 17.2%;
+    top: 14%;
+  }
+
+  .board-container {
+    padding: 10px;
   }
 }
 
