@@ -17,11 +17,22 @@
         class="instruction-texture"
         src="./assets/pattern/textureLarge.png"
       />
-      <p>
+      <!-- <p class="instruction-eng">
         Slide the blocks to solve the puzzle so that the largest square is right
         in the bottom center.
+      </p> -->
+      <p class="instruction-eng">
+        Slide the blocks to solve the puzzle: place the largest square right at
+        the bottom center.
       </p>
-      <div class="instruction-control">
+      <div class="instruction-control" id="instruction-blocks">
+        <p>There are 1x1, 1x2, and 2x2 blocks on the 4x5 board.</p>
+        <img class="instruction-control-gif" src="./assets/blocks.gif" />
+        <p class="instruction-control-kor">
+          4x5 보드 위에 1x1, 1x2, 2x2 블럭이 여러 개 놓여져 있습니다.
+        </p>
+      </div>
+      <div class="instruction-control" id="instruction-click">
         <p>
           To move a block, click on the block you want to move, <br />then click
           on an empty space.
@@ -29,6 +40,13 @@
         <img class="instruction-control-gif" src="./assets/example.gif" />
         <p class="instruction-control-kor">
           블럭을 클릭한 뒤 빈 칸을 클릭하면, 블럭이 해당 방향으로 이동합니다.
+        </p>
+      </div>
+      <div class="instruction-control" id="instruction-goal">
+        <p>Place the 2x2 block at the bottom center of the board to win</p>
+        <img class="instruction-control-gif" src="./assets/goal.gif" />
+        <p class="instruction-control-kor">
+          2x2 블럭을 보드의 맨 아래 정중앙에 위치시키면 승리합니다.
         </p>
       </div>
       <p class="instruction-kor">

@@ -26,7 +26,16 @@ export default class Puzzle {
     for (let i = 0; i < this.R; i++) {
       this.grid.push("<tr>");
       for (let j = 0; j < this.C; j++) {
-        this.grid.push(`<td data-row="${i}" data-col="${j}"></td>`);
+        // 좌표에 따라 색상 설정
+        let backgroundColor = "";
+        if (i % 2 === 0 && j % 2 === 0) {
+          backgroundColor = "rgba(211, 208, 197, 0.7)";
+        } else {
+          backgroundColor = "rgba(215, 213, 205, 0.6)";
+        }
+        this.grid.push(
+          `<td data-row="${i}" data-col="${j}" style="background-color: ${backgroundColor};"></td>`
+        );
       }
       this.grid.push("</tr>");
     }

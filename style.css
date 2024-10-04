@@ -47,6 +47,10 @@ body {
   pointer-events: none;
 }
 
+.instruction-eng {
+  padding-right: 33px;
+}
+
 .instruction-kor {
   line-height: 1.25;
   font-size: 4.3vw;
@@ -54,14 +58,27 @@ body {
 
 .instruction-control {
   display: flex;
+  display: none;
+  z-index: -1;
+  opacity: 0;
+  flex-direction: column;
+  gap: 0.8vh;
+  align-items: end;
+  font-size: 2.4vw;
+  text-align: end;
+  transition: opacity 700ms ease-in-out;
+}
+
+/* .instruction-goal {
   z-index: -1;
   opacity: 0;
   flex-direction: column;
   gap: 0.8vh;
   font-size: 2.4vw;
+  align-items: end;
   text-align: end;
-  transition: opacity 700ms ease-in-out;
-}
+  transition: opacity 700ms ease-in-out 100ms;
+} */
 
 .instruction-control-kor {
   line-height: 1.28;
@@ -69,7 +86,18 @@ body {
 }
 
 .fadein {
+  display: flex;
   opacity: 1;
+}
+
+.fadeout {
+  opacity: 0;
+  display: none;
+}
+
+.instruction-control-gif {
+  width: 100%;
+  /* display: none; */
 }
 
 .copyright {
@@ -87,7 +115,7 @@ body {
   overflow: hidden;
   position: absolute;
   right: 13%;
-  top: 20%;
+  top: 19.5%;
   z-index: 2;
   transform: rotate(3.5deg);
   transition: z-index 0s 1s;
@@ -179,41 +207,36 @@ body {
 }
 
 .s1 {
-  background-color: #545d60;
+  background-image: url("./assets/pattern/ss1.png");
 }
 .s2 {
-  background-color: #231919;
+  background-image: url("./assets/pattern/ss2.png");
 }
 .s3 {
-  background-color: #231919;
+  background-image: url("./assets/pattern/ss2.png");
 }
 .s4 {
-  background-color: #545d60;
+  background-image: url("./assets/pattern/ss1.png");
 }
 .h1 {
   /* background-color: #fcc066; */
-  background-color: #9d9d9d;
   background-image: url("./assets/pattern/hl.png");
 }
 .v1 {
   /* background-color: #a6f0db; */
-  background-color: #e7e7e7;
   background-image: url("./assets/pattern/vl.png");
 }
 
 .v2 {
   /* background-color: #8fecd1; */
-  background-color: #d1d1d1;
   background-image: url("./assets/pattern/vl.png");
 }
 .v3 {
   /* background-color: #7de4c6; */
-  background-color: #bebebe;
   background-image: url("./assets/pattern/vl.png");
 }
 .v4 {
   /* background-color: #6fdebe; */
-  background-color: #a9a9a9;
   background-image: url("./assets/pattern/vl.png");
 }
 

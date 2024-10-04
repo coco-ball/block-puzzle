@@ -6,11 +6,14 @@ puzzle.init();
 const credit = document.querySelector(".credit");
 const instruction = document.querySelector(".instruction");
 const boardContainer = document.querySelector(".board-container");
-const instructionControl = document.querySelector(".instruction-control");
+// const instructionBlocks = document.querySelector("#instruction-blocks");
+// const instructionClick = document.querySelector("#instruction-click");
+// const instructionGoal = document.querySelector("#instruction-goal");
+let instructionNum = 0;
 
 let elements = [credit, instruction, boardContainer];
 
-// 각 div의 현재 z-index 값을 가져와 배열을 z-index 순으로 정렬
+//반응형마다 initial 순서가 다를 때 사용 - 지금은 필요 x
 function getZIndex(element) {
   return parseInt(window.getComputedStyle(element).zIndex, 10) || 0;
 }
@@ -19,22 +22,62 @@ function sortElementsByZIndex() {
   return elements.sort((a, b) => getZIndex(b) - getZIndex(a)); // z-index가 높은 순으로 정렬
 }
 
+// 초기 z-index 값을 가져와 배열을 정렬
 document.addEventListener("DOMContentLoaded", function () {
-  elements = sortElementsByZIndex(); // 초기 z-index 값을 가져와 배열을 정렬
+  elements = sortElementsByZIndex();
 });
 
-// console.log(elements);
+// function getOpacity(el) {
+//   return window.getComputedStyle(el).opacity;
+// }
 
-// elements.forEach((element) => {
-//   element.addEventListener("click", function () {
-//     bringToFront(element);
-//   });
-// });
-
-function getOpacity(el) {
-  return window.getComputedStyle(el).opacity;
+function removeFadein() {
+  const instructionControl = document.querySelectorAll(".instruction-control");
+  for (var i = 0; i < instructionControl.length; i++) {
+    var item = instructionControl.item(i);
+    item.classList.remove("fadein");
+  }
 }
 
+//instruction click function
+instruction.addEventListener("click", function () {
+  //instruction이 맨 앞이 아닐 때
+  if (elements[0] !== instruction) {
+    bringToFront(instruction);
+    boardContainer.addEventListener("click", handleBoardContainerClick);
+  } else {
+    //instruction이 맨 앞일 때
+    let targetDiv = null;
+    instructionNum += 1;
+
+    switch (instructionNum % 4) {
+      case 0:
+        targetDiv = null;
+        break;
+      case 1:
+        targetDiv = document.querySelector("#instruction-blocks");
+        break;
+      case 2:
+        targetDiv = document.querySelector("#instruction-click");
+        break;
+      case 3:
+        targetDiv = document.querySelector("#instruction-goal");
+        break;
+    }
+    // console.log(targetDiv);
+    removeFadein();
+    //순서대로 fadein 추가
+    if (instructionNum !== 0 && targetDiv !== null) {
+      targetDiv.classList.add("fadein");
+    }
+
+    if (instructionNum === 4) {
+      bringToFront(boardContainer);
+    }
+  }
+});
+
+//boardContainer click funtion
 function handleBoardContainerClick() {
   if (elements[0] === boardContainer) {
     boardContainer.removeEventListener("click", handleBoardContainerClick);
@@ -43,21 +86,12 @@ function handleBoardContainerClick() {
   }
 }
 
-instruction.addEventListener("click", function () {
-  if (getOpacity(instructionControl) === "0") {
-    instructionControl.classList.add("fadein");
-  } else {
-    if (elements[0] === instruction) {
-      bringToFront(boardContainer);
-    } else {
-      bringToFront(instruction);
-      boardContainer.addEventListener("click", handleBoardContainerClick);
-    }
-  }
-});
+//credit click function
 credit.addEventListener("click", function () {
-  bringToFront(credit);
-  boardContainer.addEventListener("click", handleBoardContainerClick);
+  if (elements[0] !== credit) {
+    bringToFront(credit);
+    boardContainer.addEventListener("click", handleBoardContainerClick);
+  }
 });
 
 function bringToFront(clickedElement) {
