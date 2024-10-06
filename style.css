@@ -226,50 +226,50 @@ body {
 
 .l1 {
   background-image: url("./assets/pattern/ls.png");
-  opacity: 0.95;
+  opacity: 0.85;
 }
 
 .s1 {
   background-image: url("./assets/pattern/ss1.png");
-  opacity: 0.95;
+  opacity: 0.85;
 }
 .s2 {
   background-image: url("./assets/pattern/ss2.png");
-  opacity: 0.95;
+  opacity: 0.85;
 }
 .s3 {
   background-image: url("./assets/pattern/ss2.png");
-  opacity: 0.95;
+  opacity: 0.85;
 }
 .s4 {
   background-image: url("./assets/pattern/ss1.png");
-  opacity: 0.95;
+  opacity: 0.85;
 }
 .h1 {
   /* background-color: #fcc066; */
   background-image: url("./assets/pattern/hl.png");
-  opacity: 0.95;
+  opacity: 0.85;
 }
 .v1 {
   /* background-color: #a6f0db; */
   background-image: url("./assets/pattern/vl.png");
-  opacity: 0.95;
+  opacity: 0.85;
 }
 
 .v2 {
   /* background-color: #8fecd1; */
   background-image: url("./assets/pattern/vl.png");
-  opacity: 0.95;
+  opacity: 0.85;
 }
 .v3 {
   /* background-color: #7de4c6; */
   background-image: url("./assets/pattern/vl.png");
-  opacity: 0.95;
+  opacity: 0.85;
 }
 .v4 {
   /* background-color: #6fdebe; */
   background-image: url("./assets/pattern/vl.png");
-  opacity: 0.95;
+  opacity: 5;
 }
 
 @media screen and (max-height: 46rem) {
