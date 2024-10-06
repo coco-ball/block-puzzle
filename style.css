@@ -134,7 +134,7 @@ body {
   z-index: 2;
   transform: rotate(3.5deg);
   transition: z-index 0s 1s;
-  color: #797a7b;
+  color: #858586;
 }
 
 .credit:hover {
