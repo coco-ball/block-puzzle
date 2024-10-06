@@ -382,12 +382,21 @@ body {
 
   .instruction-control {
     font-size: 0.95rem;
-    align-items: end;
+    align-items: start;
   }
 
   .instruction-control-kor {
-    font-size: 0.84rem;
+    font-size: 0.88rem;
     order: 2;
+  }
+
+  .instruction-control-gif,
+  .instruction-click-gif {
+    max-width: 25.5rem;
+  }
+
+  .instruction-control > p {
+    max-width: 25.5rem;
   }
 
   .credit {
