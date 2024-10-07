@@ -269,7 +269,7 @@ body {
 .v4 {
   /* background-color: #6fdebe; */
   background-image: url("./assets/pattern/vl.png");
-  opacity: 5;
+  opacity: 0.85;
 }
 
 @media screen and (max-height: 46rem) {
