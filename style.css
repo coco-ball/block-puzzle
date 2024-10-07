@@ -225,50 +225,50 @@ body {
 }
 
 .l1 {
-  background-image: url("./assets/pattern/ls.png");
+  background-image: url("./assets/pattern/ls.jpg");
   opacity: 0.85;
 }
 
 .s1 {
-  background-image: url("./assets/pattern/ss1.png");
+  background-image: url("./assets/pattern/ss1.jpg");
   opacity: 0.85;
 }
 .s2 {
-  background-image: url("./assets/pattern/ss2.png");
+  background-image: url("./assets/pattern/ss2.jpg");
   opacity: 0.85;
 }
 .s3 {
-  background-image: url("./assets/pattern/ss2.png");
+  background-image: url("./assets/pattern/ss2.jpg");
   opacity: 0.85;
 }
 .s4 {
-  background-image: url("./assets/pattern/ss1.png");
+  background-image: url("./assets/pattern/ss1.jpg");
   opacity: 0.85;
 }
 .h1 {
   /* background-color: #fcc066; */
-  background-image: url("./assets/pattern/hl.png");
+  background-image: url("./assets/pattern/hl.jpg");
   opacity: 0.85;
 }
 .v1 {
   /* background-color: #a6f0db; */
-  background-image: url("./assets/pattern/vl.png");
+  background-image: url("./assets/pattern/vl.jpg");
   opacity: 0.85;
 }
 
 .v2 {
   /* background-color: #8fecd1; */
-  background-image: url("./assets/pattern/vl.png");
+  background-image: url("./assets/pattern/vl.jpg");
   opacity: 0.85;
 }
 .v3 {
   /* background-color: #7de4c6; */
-  background-image: url("./assets/pattern/vl.png");
+  background-image: url("./assets/pattern/vl.jpg");
   opacity: 0.85;
 }
 .v4 {
   /* background-color: #6fdebe; */
-  background-image: url("./assets/pattern/vl.png");
+  background-image: url("./assets/pattern/vl.jpg");
   opacity: 0.85;
 }
 
